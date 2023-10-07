@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>372016180983-68ecrnrpj987nhrf9iagv4v9qv4ikmnh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.372016180983-68ecrnrpj987nhrf9iagv4v9qv4ikmnh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCJkLwG6X4kVROIEHmmmd2ojCjwc3NxI44</string>
+	<key>GCM_SENDER_ID</key>
+	<string>372016180983</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.waterapp</string>
+	<key>PROJECT_ID</key>
+	<string>project-water-f2424</string>
+	<key>STORAGE_BUCKET</key>
+	<string>project-water-f2424.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:372016180983:ios:b8d00994eadbb71b622df2</string>
+</dict>
+</plist>

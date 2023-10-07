@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "372016180983",
+    "project_id": "project-water-f2424",
+    "storage_bucket": "project-water-f2424.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372016180983:android:f8af9f2995ca1743622df2",
+        "android_client_info": {
+          "package_name": "com.example.waterapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtxky4A4VMUtrmhZwLPWnCn-kvnSOjwYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
