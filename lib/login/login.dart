@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
 import 'package:waterapp/forgotpass/forpass.dart';
+import 'package:waterapp/homepage/homepage.dart';
 import 'package:waterapp/loginmethods/google.dart';
-import '../signup/signup.dart';
+import 'package:waterapp/signup/signup.dart';
+import 'package:waterapp/splash/splash.dart';
 
 class loginpage extends StatefulWidget {
   const loginpage({Key? key}) : super(key: key);
@@ -18,15 +19,6 @@ class _loginpageState extends State<loginpage> {
 
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
-  RegExp _emailRegex = RegExp(r'^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+');
-  RegExp _passwordRegex = RegExp(r'^[a-zA-Z0-9_@.\-]{3,20}$');
-
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
-    super.dispose();
-  }
 
   void _loginWithEmailPassword() async {
     if (_formKey.currentState!.validate()) {
@@ -39,9 +31,14 @@ class _loginpageState extends State<loginpage> {
           email: email,
           password: password,
         );
+
+        Navigator.push(context, MaterialPageRoute(builder: (_) => splash()));
       } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Login Failed: Incorrect User Credentials")),
+          SnackBar(
+            content: Text("Login Failed: Incorrect User Credentials"),
+            duration: Duration(seconds: 3),
+          ),
         );
       }
     }
@@ -56,7 +53,7 @@ class _loginpageState extends State<loginpage> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           elevation: 0,
-          title: const Text("Travel Eze"),
+          title: const Text("Login"),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -69,8 +66,6 @@ class _loginpageState extends State<loginpage> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter a valid email';
-                    } else if (!_emailRegex.hasMatch(value)) {
-                      return 'Enter a valid email address';
                     }
                     return null;
                   },
@@ -91,8 +86,6 @@ class _loginpageState extends State<loginpage> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter a password';
-                    } else if (!_passwordRegex.hasMatch(value)) {
-                      return 'Enter a valid password';
                     }
                     return null;
                   },
@@ -118,7 +111,16 @@ class _loginpageState extends State<loginpage> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              Container(
+                alignment: Alignment.topRight,
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => forget_pass()));
+                  },
+                  child: Text("Forgot Password ?"),
+                ),
+              ),
               InkWell(
                 onTap: _loginWithEmailPassword,
                 child: AnimatedContainer(
@@ -143,29 +145,16 @@ class _loginpageState extends State<loginpage> {
                   ),
                 ),
               ),
-              SizedBox(height: 5),
-              SizedBox(height: 0),
               TextButton(
                 onPressed: () {
                   Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => forget_pass()),
-                  );
-                },
-                child: Text("Forgot Password ?"),
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => signup()),
-                  );
+                      context, MaterialPageRoute(builder: (_) => signup()));
                 },
                 child: Text("Don't Have an account?"),
               ),
-              SizedBox(height: 20),
-              Center(child: Text('or login with')),
-              SizedBox(height: 20),
+              SizedBox(
+                height: size.height * 0.02,
+              ),
               InkWell(
                 onTap: () {
                   AuthService().signInWithGoogle();

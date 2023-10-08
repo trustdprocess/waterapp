@@ -35,7 +35,7 @@ class _signupState extends State<signup> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           elevation: 0,
-          title: const Text("travel Go"),
+          title: const Text("Signup"),
         ),
         body: SingleChildScrollView(
           child: Column(

@@ -27,6 +27,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: AuthService().AuthState(),
+     
+      
       initialRoute: "/",
       onGenerateRoute:RouteGenerator.generateRoute ,
       theme:theme.defaultTheme ,
